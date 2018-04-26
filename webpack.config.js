@@ -12,40 +12,25 @@ module.exports = {
 	},
 	module: {
 		rules: [
-			{
-				test: /\.css$/,
-				use: ['vue-style-loader', 'css-loader'],
-			},
-			{
-				test: /\.scss$/,
-				use: ['css-loader', 'sass-loader']
-			},
-			{
-				test: /\.vue$/,
-				loader: 'vue-loader',
-				options: {
-					loaders: {
-						'scss': [
-							{ loader: 'vue-style-loader' },
-							{ loader: 'css-loader' }
-						]
-					}
-				}
-			},
-			{
-				test: /\.js$/,
-				loader: 'babel-loader',
-				exclude: /node_modules/
-			}
+			{ test: /\.css$/, use: ['vue-style-loader', 'css-loader'], },
+			{ test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+			{ test: /\.vue$/, loader: 'vue-loader', options: { loaders: { 'scss': ['style-loader', 'vue-style-loader', 'css-loader', 'sass-loader'] } } },
+			{ test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.svg$/, loader: 'url-loader?limit=65000&mimetype=image/svg+xml&name=[name].[ext]' },
+      { test: /\.woff$/, loader: 'url-loader?limit=65000&mimetype=application/font-woff&name=[name].[ext]' },
+      { test: /\.woff2$/, loader: 'url-loader?limit=65000&mimetype=application/font-woff2&name=[name].[ext]' },
+      { test: /\.[ot]tf$/, loader: 'url-loader?limit=65000&mimetype=application/octet-stream&name=[name].[ext]' },
+      { test: /\.eot$/, loader: 'url-loader?limit=65000&mimetype=application/vnd.ms-fontobject&name=[name].[ext]' }
 		]
 	},
 	resolve: {
 		alias: {
-			'demo-component': path.resolve('./src')
+			'demo-component': path.resolve('./src'),
+			'bootstrap': path.resolve('./node_modules/bootstrap/scss/bootstrap.scss')
 		},
 		extensions: ['*', '.js', '.vue', '.json', '.scss']
 	},
 	devServer: {
-		contentBase: path.join(__dirname, "demo/"),
+		contentBase: path.join(__dirname, "demo/")
 	}
 }

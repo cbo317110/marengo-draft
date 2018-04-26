@@ -1,6 +1,6 @@
 <template>
 	<div>
-		{{ $trans('helloWorld') }}
+		{{ $trans('helloWorld') }} <fa class="fas fa-globe"/>
 	</div>
 </template>
 
