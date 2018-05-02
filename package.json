@@ -3,9 +3,12 @@
 	"version": "0.0.1",
 	"main": "src/index.vue",
 	"dependencies": {
-		"marengo": "0.0.3",
 		"bootstrap": "^4.1.0",
 		"fa5-local": "^0.0.1",
+		"marengo": "0.0.3",
+		"marengo-language": "0.0.6",
+		"marengo-middleware": "^1.0.0",
+		"marengo-requests": "0.0.6",
 		"vue": "^2.5.16"
 	},
 	"devDependencies": {
