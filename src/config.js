@@ -4,6 +4,7 @@ import en_US from './lang/en_US'
 import language from 'marengo-language'
 import requests from 'marengo-requests'
 import middleware from 'marengo-middleware'
+import formContainer from 'marengo-form'
 
 export default {
 	env: {
@@ -12,7 +13,8 @@ export default {
 	kext: {
 		language,
 		requests,
-		middleware
+		middleware,
+		formContainer
 	},
 	body: {
 		language: {

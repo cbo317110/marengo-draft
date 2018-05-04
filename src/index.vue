@@ -1,31 +1,60 @@
 <template>
 	<div>
-		<i class="fas fa-globe"/>
-		<middleware>
-			<div v-html="$('welcome', {name: ['neto', log]})" />
-			{{ operations }}
-			<button @click="operations = operations + 1">Test</button>
-		</middleware>
+		<div class="col-sm-12">
+			<i class="fas fa-globe"/>
+			<middleware>
+				<div v-html="$('welcome', {name: ['neto', log]})" />
+				{{ operations }}
+				<button @click="operations = operations + 1">Test</button>
+			</middleware>
+		</div>
+		<div class="col-sm-6">
+			<h5>marengo-form</h5>
+			<formContainer v-on:submit="submit">
+				<div class="form-group">
+					<label>Email</label>
+					<input type="text" class="form-control" v-validate="{template: 'email'}">
+					<div class="invalid-feedback"></div>
+				</div>
+				<div class="form-group">
+					<label>Phone</label>
+					<input type="text" class="form-control" v-validate="{template: 'phone', required: false}">
+					<div class="invalid-feedback"></div>
+				</div>
+				<div class="form-group">
+					<label>Minimum Length: <small>3</small></label>
+					<input type="text" class="form-control" v-validate="{template: { length: 3 }}">
+					<div class="invalid-feedback"></div>
+				</div>
+				<passwordCreation></passwordCreation>
+				<div class="form-group">
+					<button class="btn btn-primary" type="submit">submit</button>
+				</div>
+			</formContainer>
+		</div>
 	</div>
 </template>
 
 <script>
-	import Marengo from 'marengo'
-	import conf from './conf'
-	export default Marengo({
-		conf,
-		data() {
-			return {
-				operations: 0
-			}
-		},
-		methods: {
-			log(value) {
-				console.log(value)
-			}
-		},
-		mounted() {
-			this.$requests('search').get('larissa').purpose(console.log).fire()
+import Marengo from 'marengo'
+import config from './config'
+export default Marengo({
+	marengo: config,
+	data() {
+		return {
+			operations: 0
 		}
-	})
+	},
+	methods: {
+		log(value) {
+			console.log(value)
+		},
+		submit() {
+			console.log('works')
+		}
+	},
+	mounted() {
+		this.$requests('search').get('larissa').purpose(console.log).fire()
+	}
+})
 </script>
