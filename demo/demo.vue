@@ -12,7 +12,8 @@
 				marengo: {
 					language: {
 						current: 'en_US'
-					}
+					},
+					requests: {}
 				}
 			}
 		}

@@ -11,5 +11,13 @@ export default {
 				'welcome':  'Welcome to the {name} project'
 			}
 		}
+	},
+	requests: {
+		igsearch: {
+			base: 'https://www.instagram.com/web/search/topsearch/?context=blended&query='
+		}
+	},
+	middleware(allow) {
+		this.$requests('igsearch').get('Francisco').purpose(allow).fire()
 	}
 }
