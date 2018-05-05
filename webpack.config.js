@@ -16,9 +16,6 @@ module.exports = {
 				test: /\.vue$/,
 				loader: 'vue-loader',
 				options: {
-					preLoaders: {
-            js: 'marengo-loader'
-          },
 					loaders: {
 						'scss': [
 							'style-loader',

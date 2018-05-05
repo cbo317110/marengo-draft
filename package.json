@@ -4,11 +4,11 @@
 	"main": "src/index.vue",
 	"dependencies": {
 		"bootstrap": "^4.1.0",
+		"export-loader": "^1.0.52",
 		"fa5-local": "^0.0.1",
-		"marengo": "^0.0.6",
-		"marengo-language": "^0.0.7",
-		"marengo-loader": "^0.0.65",
-		"vue": "^2.5.16"
+		"vue": "^2.5.16",
+		"marengo": "^0.0.7",
+		"marengo-language": "^0.0.7"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
