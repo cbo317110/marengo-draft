@@ -6,8 +6,8 @@
 		"bootstrap": "^4.1.0",
 		"fa5-local": "^0.0.1",
 		"marengo": "^0.0.6",
-		"marengo-language": "0.0.6",
-		"marengo-loader": "0.0.65",
+		"marengo-language": "^0.0.7",
+		"marengo-loader": "^0.0.65",
 		"vue": "^2.5.16"
 	},
 	"devDependencies": {
