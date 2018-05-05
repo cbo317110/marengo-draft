@@ -12,9 +12,25 @@ module.exports = {
 	},
 	module: {
 		rules: [
+			{ 
+				test: /\.vue$/,
+				loader: 'vue-loader',
+				options: {
+					preLoaders: {
+            js: 'marengo-loader'
+          },
+					loaders: {
+						'scss': [
+							'style-loader',
+							'vue-style-loader',
+							'css-loader',
+							'sass-loader'
+						]
+					}
+				}
+			},
 			{ test: /\.css$/, use: ['vue-style-loader', 'css-loader'], },
 			{ test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
-			{ test: /\.vue$/, loader: 'vue-loader', options: { loaders: { 'scss': ['style-loader', 'vue-style-loader', 'css-loader', 'sass-loader'] } } },
 			{ test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.svg$/, loader: 'url-loader?limit=65000&mimetype=image/svg+xml&name=[name].[ext]' },
       { test: /\.woff$/, loader: 'url-loader?limit=65000&mimetype=application/font-woff&name=[name].[ext]' },
