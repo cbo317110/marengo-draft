@@ -19,5 +19,8 @@ export default {
 	},
 	middleware(allow) {
 		this.$requests('igsearch').get('Francisco').purpose(allow).fire()
+	},
+	forms: {
+		
 	}
 }

@@ -6,11 +6,12 @@
 		"bootstrap": "^4.1.0",
 		"export-loader": "^1.0.52",
 		"fa5-local": "^0.0.1",
-		"vue": "^2.5.16",
-		"marengo": "^0.0.91",
+		"marengo": "^0.0.92",
 		"marengo-language": "^1.0.1",
+		"marengo-middleware": "^1.0.1",
 		"marengo-requests": "^1.0.1",
-		"marengo-middleware": "^1.0.1"
+		"marengo-validation": "^1.0.1",
+		"vue": "^2.5.16"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",

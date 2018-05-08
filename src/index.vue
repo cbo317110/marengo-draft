@@ -9,6 +9,17 @@
 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	</middleware>
+	<validation :for="send" :model="validation">
+		<div class="form-group">
+			<input class="form-control" type="text" valid-by="email">
+			<div class="invalid-feedback"></div>
+		</div>
+		<div class="form-group">
+			<input class="form-control" type="text" valid-by="phone">
+			<div class="invalid-feedback"></div>
+		</div>
+		<button type="submit">Enviar</button>
+	</validation>
 </div>
 </template>
 
@@ -18,8 +29,23 @@ import s from './settings'
 import p from './plugins'
 export default {
 	extends: m(s, p),
+	data() {
+		return {
+			validation: {
+				email: {
+					template: 'email'
+				},
+				phone: {
+					template: 'phone'
+				}
+			}
+		}
+	},
 	methods: {
-		log: console.log
+		log: console.log,
+		send(e) {
+			console.log('enviando')
+		}
 	}
 }
 </script>
@@ -27,7 +53,5 @@ export default {
 <style lang="scss">
 body {
 	padding: 12px;
-	background: red;
-	color: white;
 }
 </style>
